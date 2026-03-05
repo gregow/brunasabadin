@@ -1,0 +1,130 @@
+{
+  "identity": {
+    "name": "The Golden Panther",
+    "handle": "@sabadinnk",
+    "artist": "Bruna",
+    "tone": "Elegant, Mystical, Nature-Inspired, Organic, Spiritual",
+    "keywords": ["Fineline", "Ornamental", "Azulejo", "Gold", "Nature"],
+    "archetype": "Organic & Earthy (Archetype 1) + Jewel Luxury (Archetype 5)"
+  },
+  "typography": {
+    "headings": {
+      "family": "\"Cinzel Decorative\", serif",
+      "weight": "700",
+      "style": "uppercase",
+      "usage": "Hero titles, Section headers"
+    },
+    "subheadings": {
+      "family": "\"Cormorant Garamond\", serif",
+      "weight": "400",
+      "style": "italic",
+      "usage": "Taglines, Testimonials, Introductory text"
+    },
+    "body": {
+      "family": "\"Mulish\", sans-serif",
+      "weight": "300",
+      "usage": "Paragraphs, Form labels, Footer text"
+    },
+    "google_fonts_url": "https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Mulish:wght@200;300;400;500&display=swap"
+  },
+  "colors": {
+    "palette": {
+      "primary": {
+        "hex": "#FAF9F6",
+        "name": "Off-White Cream",
+        "usage": "Main Background"
+      },
+      "secondary": {
+        "hex": "#F0EBE0",
+        "name": "Warm Sand",
+        "usage": "Section Alternates, Cards"
+      },
+      "accent": {
+        "hex": "#D4AF37",
+        "name": "Metallic Gold",
+        "usage": "Buttons, Borders, Icons, Highlights"
+      },
+      "text": {
+        "primary": "#2F3E46",
+        "secondary": "#526770",
+        "name": "Deep Jungle Charcoal"
+      },
+      "special": {
+        "hex": "#0047AB",
+        "name": "Azulejo Cobalt",
+        "usage": "Subtle patterns, specific artistic flourishes (Use sparingly)"
+      }
+    },
+    "gradients": {
+      "gold_shimmer": "linear-gradient(135deg, #D4AF37 0%, #F3E5AB 50%, #C5A059 100%)",
+      "cream_fade": "linear-gradient(to bottom, #FAF9F6 0%, #F0EBE0 100%)"
+    }
+  },
+  "layout": {
+    "spacing": {
+      "container_padding": "p-6 md:p-12 lg:p-24",
+      "section_gap": "gap-16 md:gap-32",
+      "grid_gap": "gap-8"
+    },
+    "grid_system": "Bento Grid (Mode A) for Portfolio",
+    "container_width": "max-w-7xl mx-auto"
+  },
+  "visual_enhancers": {
+    "textures": {
+      "noise": "url(\"data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.05'/%3E%3C/svg%3E\")",
+      "azulejo_pattern": "Use the Azulejo image as a low-opacity (5%) background overlay in specific sections"
+    },
+    "shadows": {
+      "soft": "0 10px 40px -10px rgba(47, 62, 70, 0.1)",
+      "gold_glow": "0 0 20px rgba(212, 175, 55, 0.3)"
+    },
+    "borders": {
+      "style": "1px solid rgba(212, 175, 55, 0.3)",
+      "radius": "rounded-sm (Sharp edges preferred for elegance) or rounded-tr-3xl (for organic feel)"
+    }
+  },
+  "component_strategies": {
+    "buttons": {
+      "primary": "bg-transparent border border-[#D4AF37] text-[#2F3E46] hover:bg-[#D4AF37] hover:text-white transition-all duration-500 uppercase tracking-widest text-xs px-8 py-4",
+      "secondary": "text-[#2F3E46] underline decoration-[#D4AF37] underline-offset-4 hover:text-[#D4AF37] transition-colors"
+    },
+    "cards": {
+      "style": "bg-white/50 backdrop-blur-sm border border-[#D4AF37]/20 p-8 hover:border-[#D4AF37]/60 transition-all duration-500 group relative overflow-hidden"
+    },
+    "forms": {
+      "input": "bg-transparent border-b border-[#2F3E46]/20 focus:border-[#D4AF37] outline-none rounded-none px-0 py-4 transition-colors placeholder:text-[#2F3E46]/40 font-light"
+    }
+  },
+  "image_urls": {
+    "hero_bg": "https://images.unsplash.com/photo-1760784213096-4545961ba4a8?crop=entropy&cs=srgb&fm=jpg&q=85",
+    "artist_portrait": "https://images.unsplash.com/photo-1619107096667-891bbded4b85?crop=entropy&cs=srgb&fm=jpg&q=85",
+    "studio_interior": "https://images.unsplash.com/photo-1713286663271-809d910c0c65?crop=entropy&cs=srgb&fm=jpg&q=85",
+    "azulejo_texture": "https://images.unsplash.com/photo-1762786924368-f18185f5382c?crop=entropy&cs=srgb&fm=jpg&q=85",
+    "portfolio": [
+      "https://images.unsplash.com/photo-1766083274361-ed1f8c94c191?crop=entropy&cs=srgb&fm=jpg&q=85",
+      "https://images.unsplash.com/photo-1770983438176-e62052160fba?crop=entropy&cs=srgb&fm=jpg&q=85",
+      "https://images.unsplash.com/photo-1749731043536-1b616bc38107?crop=entropy&cs=srgb&fm=jpg&q=85"
+    ]
+  },
+  "instructions_to_main_agent": [
+    "1. SETUP: Install specific dependencies: `framer-motion` (mandatory for scroll reveal), `lucide-react` (icons).",
+    "2. THEME: Apply the Google Fonts in `index.css`. Set the background color of the body to #FAF9F6.",
+    "3. HEADER: Create a transparent sticky header that blurs (glassmorphism) on scroll. Logo should be text 'THE GOLDEN PANTHER' in Cinzel Decorative.",
+    "4. HERO: Use the Gold Texture as a subtle overlay or parallax element. Main focus is Typography + a Floating Botanical Illustration.",
+    "5. SECTIONS: Alternate between 'Off-White Cream' and 'Warm Sand' backgrounds. Use generous padding (py-32).",
+    "6. PORTFOLIO: Implement a Masonry Layout (Bento Grid). Images must have a grayscale filter that turns to color on hover.",
+    "7. FORM: The contact form should feel like a premium invitation. No boxy inputs. Use underlined inputs.",
+    "8. AZULEJO: Use the Azulejo texture URL as a border-image or a very subtle background pattern in the 'About' section.",
+    "9. FOOTER: Large typography, centered. Social link (@sabadinnk) should be prominent.",
+    "10. MICRO-INTERACTIONS: All buttons and links must have a slow, elegant hover transition (duration-500).",
+    "11. DATA-TESTID: Ensure all interactive elements have data-testid attributes."
+  ],
+  "universal_guidelines": [
+    "Do not use gradients for dark colors.",
+    "Avoid centered layouts for heavy text; use asymmetrical balance.",
+    "Use z-index hierarchy for depth.",
+    "No generic AI emojis.",
+    "Use 'sonner' for toasts.",
+    "Add 'data-testid' to all interactive elements."
+  ]
+}
