@@ -7,6 +7,7 @@ import logging
 from pathlib import Path
 from pydantic import BaseModel, Field, ConfigDict
 from typing import List, Optional
+from pydantic import EmailStr
 import uuid
 from datetime import datetime, timezone
 
@@ -29,7 +30,7 @@ api_router = APIRouter(prefix="/api")
 # Models
 class InquiryCreate(BaseModel):
     name: str
-    email: str
+    email: EmailStr
     phone: Optional[str] = None
     tattoo_description: str
     placement: Optional[str] = None
@@ -40,7 +41,7 @@ class Inquiry(BaseModel):
     model_config = ConfigDict(extra="ignore")
     id: str = Field(default_factory=lambda: str(uuid.uuid4()))
     name: str
-    email: str
+    email: EmailStr
     phone: Optional[str] = None
     tattoo_description: str
     placement: Optional[str] = None
