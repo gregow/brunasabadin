@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,100;0,300;0,400;0,600;1,300;1,400&family=Mulish:wght@200;300;400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Mulish:wght@200;300;400;500&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -9,8 +9,8 @@
   --warm-sand: #F0EBE0;
   --gold: #D4AF37;
   --gold-light: #F3E5AB;
-  --text-primary: #2F3E46;
-  --text-secondary: #526770;
+  --text-primary: #3D4F2F;
+  --text-secondary: #5B6B4F;
   --azulejo: #0047AB;
 }
 
@@ -29,8 +29,10 @@ code {
 }
 
 h1, h2, h3 {
-  font-family: "Cormorant Garamond", serif;
-  font-weight: 100;
+  font-family: "Mulish", sans-serif;
+  font-weight: 200;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
 }
 
 .font-subheading {

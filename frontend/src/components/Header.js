@@ -32,7 +32,7 @@ export const Header = () => {
         <a
           href="#hero"
           data-testid="logo-link"
-          className="font-['Cormorant_Garamond'] font-thin text-[#2F3E46] text-xs md:text-sm tracking-[0.3em] uppercase hover:text-[#D4AF37] transition-colors duration-500"
+          className="font-['Mulish'] font-extralight text-[#3D4F2F] text-xs md:text-sm tracking-[0.3em] uppercase hover:text-[#D4AF37] transition-colors duration-500"
         >
           The Golden Panther
         </a>
@@ -44,7 +44,7 @@ export const Header = () => {
               key={link.href}
               href={link.href}
               data-testid={`nav-${link.label.toLowerCase()}`}
-              className="font-['Mulish'] text-xs tracking-[0.2em] uppercase text-[#526770] hover:text-[#D4AF37] transition-colors duration-500 relative group"
+              className="font-['Mulish'] text-xs tracking-[0.2em] uppercase text-[#5B6B4F] hover:text-[#D4AF37] transition-colors duration-500 relative group"
             >
               {link.label}
               <span className="absolute -bottom-1 left-0 w-0 h-px bg-[#D4AF37] group-hover:w-full transition-all duration-500" />
@@ -55,7 +55,7 @@ export const Header = () => {
         {/* Mobile burger */}
         <button
           data-testid="mobile-menu-toggle"
-          className="md:hidden text-[#2F3E46] hover:text-[#D4AF37] transition-colors"
+          className="md:hidden text-[#3D4F2F] hover:text-[#D4AF37] transition-colors"
           onClick={() => setMobileOpen(!mobileOpen)}
         >
           {mobileOpen ? <X size={22} /> : <Menu size={22} />}
@@ -79,7 +79,7 @@ export const Header = () => {
                   href={link.href}
                   data-testid={`mobile-nav-${link.label.toLowerCase()}`}
                   onClick={() => setMobileOpen(false)}
-                  className="font-['Mulish'] text-sm tracking-[0.2em] uppercase text-[#526770] hover:text-[#D4AF37] transition-colors duration-500"
+                  className="font-['Mulish'] text-sm tracking-[0.2em] uppercase text-[#5B6B4F] hover:text-[#D4AF37] transition-colors duration-500"
                 >
                   {link.label}
                 </a>

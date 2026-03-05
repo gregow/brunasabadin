@@ -20,16 +20,6 @@ export const AboutSection = () => {
       data-testid="about-section"
       className="relative py-24 md:py-32 bg-[#F0EBE0]"
     >
-      {/* Subtle azulejo pattern overlay */}
-      <div
-        className="absolute inset-0 opacity-[0.03]"
-        style={{
-          backgroundImage: `url("https://images.unsplash.com/photo-1762786924368-f18185f5382c?crop=entropy&cs=srgb&fm=jpg&q=85&w=400")`,
-          backgroundSize: "300px",
-          backgroundRepeat: "repeat",
-        }}
-      />
-
       <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12 lg:px-24">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-center">
           {/* Image */}
@@ -70,7 +60,7 @@ export const AboutSection = () => {
               viewport={{ once: true, margin: "-100px" }}
               custom={1}
               variants={fadeInUp}
-              className="font-['Cormorant_Garamond'] font-thin text-[#2F3E46] text-2xl sm:text-3xl lg:text-4xl mb-8"
+              className="font-['Mulish'] font-extralight text-[#3D4F2F] text-2xl sm:text-3xl lg:text-4xl mb-8 tracking-[0.2em] uppercase"
             >
               About Bruna
             </motion.h2>
@@ -81,7 +71,7 @@ export const AboutSection = () => {
               viewport={{ once: true, margin: "-100px" }}
               custom={2}
               variants={fadeInUp}
-              className="font-body text-[#526770] text-base leading-relaxed mb-6"
+              className="font-body text-[#5B6B4F] text-base leading-relaxed mb-6"
             >
               Bruna is a tattoo artist based in Porto, Portugal, specializing in
               Fineline, Ornamental, and Azulejo Portugu&ecirc;s styles. Her art is
@@ -95,7 +85,7 @@ export const AboutSection = () => {
               viewport={{ once: true, margin: "-100px" }}
               custom={3}
               variants={fadeInUp}
-              className="font-body text-[#526770] text-base leading-relaxed mb-6"
+              className="font-body text-[#5B6B4F] text-base leading-relaxed mb-6"
             >
               Each tattoo is created in a fully personalized way, seeking to express
               the essence and the unique stories of every client. Working at{" "}
@@ -110,7 +100,7 @@ export const AboutSection = () => {
               viewport={{ once: true, margin: "-100px" }}
               custom={4}
               variants={fadeInUp}
-              className="font-subheading text-[#2F3E46] text-lg"
+              className="font-subheading text-[#3D4F2F] text-lg"
             >
               &ldquo;Every tattoo tells a story &mdash; yours, written on skin.&rdquo;
             </motion.p>
@@ -127,7 +117,7 @@ export const AboutSection = () => {
                 (tag) => (
                   <span
                     key={tag}
-                    className="border border-[#D4AF37]/40 text-[#2F3E46] text-xs tracking-[0.15em] uppercase px-4 py-2 font-body"
+                    className="border border-[#D4AF37]/40 text-[#3D4F2F] text-xs tracking-[0.15em] uppercase px-4 py-2 font-body"
                   >
                     {tag}
                   </span>

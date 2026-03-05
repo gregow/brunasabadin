@@ -41,7 +41,7 @@ export const StudioSection = () => {
               viewport={{ once: true, margin: "-100px" }}
               custom={1}
               variants={fadeInUp}
-              className="font-['Cormorant_Garamond'] font-thin text-[#2F3E46] text-2xl sm:text-3xl lg:text-4xl mb-10"
+              className="font-['Mulish'] font-extralight text-[#3D4F2F] text-2xl sm:text-3xl lg:text-4xl mb-10 tracking-[0.2em] uppercase"
             >
               The Studio
             </motion.h2>
@@ -57,10 +57,10 @@ export const StudioSection = () => {
               >
                 <MapPin size={18} className="text-[#D4AF37] mt-1 flex-shrink-0" />
                 <div>
-                  <p className="font-body text-[#2F3E46] text-sm font-medium uppercase tracking-wider mb-1">
+                  <p className="font-body text-[#3D4F2F] text-sm font-medium uppercase tracking-wider mb-1">
                     Address
                   </p>
-                  <p className="font-body text-[#526770] text-base leading-relaxed">
+                  <p className="font-body text-[#5B6B4F] text-base leading-relaxed">
                     Rua da Firmeza, 457, 2&ordm; andar
                     <br />
                     Porto, Portugal
@@ -87,10 +87,10 @@ export const StudioSection = () => {
               >
                 <Clock size={18} className="text-[#D4AF37] mt-1 flex-shrink-0" />
                 <div>
-                  <p className="font-body text-[#2F3E46] text-sm font-medium uppercase tracking-wider mb-1">
+                  <p className="font-body text-[#3D4F2F] text-sm font-medium uppercase tracking-wider mb-1">
                     Hours
                   </p>
-                  <p className="font-body text-[#526770] text-base">
+                  <p className="font-body text-[#5B6B4F] text-base">
                     By appointment only
                   </p>
                 </div>
@@ -106,13 +106,13 @@ export const StudioSection = () => {
               >
                 <Mail size={18} className="text-[#D4AF37] mt-1 flex-shrink-0" />
                 <div>
-                  <p className="font-body text-[#2F3E46] text-sm font-medium uppercase tracking-wider mb-1">
+                  <p className="font-body text-[#3D4F2F] text-sm font-medium uppercase tracking-wider mb-1">
                     Email
                   </p>
                   <a
                     href="mailto:sabadinnk@gmail.com"
                     data-testid="studio-email-link"
-                    className="font-body text-[#526770] text-base hover:text-[#D4AF37] transition-colors duration-500"
+                    className="font-body text-[#5B6B4F] text-base hover:text-[#D4AF37] transition-colors duration-500"
                   >
                     sabadinnk@gmail.com
                   </a>
