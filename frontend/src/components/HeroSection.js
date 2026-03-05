@@ -40,7 +40,7 @@ export const HeroSection = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.5 }}
-          className="!font-['Cinzel_Decorative'] !font-thin !text-4xl sm:!text-5xl lg:!text-6xl text-[#2F3E46]">
+          className="!font-['Cormorant_Garamond'] !font-thin !text-4xl sm:!text-5xl lg:!text-6xl text-[#2F3E46]">
 
           Bruna
         </motion.h1>

@@ -69,7 +69,7 @@ export const PortfolioSection = () => {
             viewport={{ once: true, margin: "-100px" }}
             custom={1}
             variants={fadeIn}
-            className="font-['Cinzel_Decorative'] text-[#2F3E46] text-2xl sm:text-3xl lg:text-4xl"
+            className="font-['Cormorant_Garamond'] font-thin text-[#2F3E46] text-2xl sm:text-3xl lg:text-4xl"
           >
             Portfolio
           </motion.h2>

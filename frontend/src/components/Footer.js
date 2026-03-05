@@ -17,7 +17,7 @@ export const Footer = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="!font-['Cinzel_Decorative'] !font-thin !text-3xl md:!text-4xl lg:!text-5xl mb-6 text-[#FAF9F6]">
+          className="!font-['Cormorant_Garamond'] !font-thin !text-3xl md:!text-4xl lg:!text-5xl mb-6 text-[#FAF9F6]">
 
           Bruna
         </motion.h3>

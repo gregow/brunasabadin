@@ -32,7 +32,7 @@ export const Header = () => {
         <a
           href="#hero"
           data-testid="logo-link"
-          className="font-['Cinzel_Decorative'] text-[#2F3E46] text-xs md:text-sm tracking-[0.3em] uppercase hover:text-[#D4AF37] transition-colors duration-500"
+          className="font-['Cormorant_Garamond'] font-thin text-[#2F3E46] text-xs md:text-sm tracking-[0.3em] uppercase hover:text-[#D4AF37] transition-colors duration-500"
         >
           The Golden Panther
         </a>

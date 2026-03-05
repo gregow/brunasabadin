@@ -87,7 +87,7 @@ export const InquiryForm = () => {
               viewport={{ once: true, margin: "-100px" }}
               custom={1}
               variants={fadeInUp}
-              className="font-['Cinzel_Decorative'] text-[#2F3E46] text-2xl sm:text-3xl lg:text-4xl mb-8"
+              className="font-['Cormorant_Garamond'] font-thin text-[#2F3E46] text-2xl sm:text-3xl lg:text-4xl mb-8"
             >
               Tattoo Inquiry
             </motion.h2>
