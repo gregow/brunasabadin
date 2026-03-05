@@ -49,7 +49,7 @@ export const PortfolioSection = () => {
     <section
       id="portfolio"
       data-testid="portfolio-section"
-      className="py-24 md:py-32 bg-[#FAF9F6]"
+      className="py-24 md:py-32 bg-white"
     >
       <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-24">
         {/* Section header */}

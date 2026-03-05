@@ -7,7 +7,7 @@ export const HeroSection = () => {
     <section
       id="hero"
       data-testid="hero-section"
-      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-[#FAF9F6]"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-white"
     >
       {/* Gold decorative line top */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-px h-32 bg-gradient-to-b from-transparent to-[#D4AF37]/40" />

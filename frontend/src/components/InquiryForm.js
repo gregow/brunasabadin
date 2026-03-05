@@ -65,7 +65,7 @@ export const InquiryForm = () => {
     <section
       id="inquiry"
       data-testid="inquiry-section"
-      className="py-24 md:py-32 bg-[#FAF9F6]"
+      className="py-24 md:py-32 bg-white"
     >
       <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-24">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20">

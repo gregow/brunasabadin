@@ -24,7 +24,7 @@ export const Header = () => {
       data-testid="main-header"
       className={`fixed top-0 left-0 w-full z-50 transition-all duration-700 ${
         scrolled
-          ? "bg-[#FAF9F6]/80 backdrop-blur-xl shadow-[0_1px_0_rgba(212,175,55,0.2)]"
+          ? "bg-white/80 backdrop-blur-xl shadow-[0_1px_0_rgba(212,175,55,0.2)]"
           : "bg-transparent"
       }`}
     >
@@ -70,7 +70,7 @@ export const Header = () => {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden bg-[#FAF9F6]/95 backdrop-blur-xl border-t border-[#D4AF37]/20 overflow-hidden"
+            className="md:hidden bg-white/95 backdrop-blur-xl border-t border-[#D4AF37]/20 overflow-hidden"
           >
             <div className="flex flex-col items-center gap-6 py-8">
               {NAV_LINKS.map((link) => (
