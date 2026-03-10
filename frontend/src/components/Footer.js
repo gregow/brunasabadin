@@ -27,7 +27,7 @@ export const Footer = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="font-subheading text-[#FAF9F6]/60 text-lg mb-10"
+          className="font-['Mulish'] font-light text-[#FAF9F6]/60 text-sm tracking-wider mb-10"
         >
           Tattoo Artist at{" "}
           <a

@@ -27,7 +27,7 @@ export const StudioSection = () => {
               whileInView="visible"
               viewport={{ once: true, margin: "-100px" }}
               variants={fadeInUp}
-              className="font-subheading text-[#D4AF37] text-base tracking-widest uppercase mb-3"
+              className="font-['Mulish'] font-light text-[#D4AF37] text-xs tracking-[0.3em] uppercase mb-3"
             >
               Find Me
             </motion.p>
@@ -133,7 +133,7 @@ export const StudioSection = () => {
               whileInView="visible"
               viewport={{ once: true, margin: "-100px" }}
               variants={fadeInUp}
-              className="font-subheading text-[#D4AF37] text-base tracking-widest uppercase mb-3"
+              className="font-['Mulish'] font-light text-[#D4AF37] text-xs tracking-[0.3em] uppercase mb-3"
             >
               On the Road
             </motion.p>
@@ -160,7 +160,7 @@ export const StudioSection = () => {
               <div className="flex items-start gap-4">
                 <Plane size={18} className="text-[#D4AF37] mt-1 flex-shrink-0" />
                 <div>
-                  <p className="font-body text-[#86895d] text-sm italic">
+                  <p className="font-body text-[#86895d] text-sm">
                     Upcoming guest spots will be announced here and on{" "}
                     <a
                       href="https://www.instagram.com/sabadinnk"

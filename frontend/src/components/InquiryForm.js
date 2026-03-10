@@ -76,7 +76,7 @@ export const InquiryForm = () => {
               whileInView="visible"
               viewport={{ once: true, margin: "-100px" }}
               variants={fadeInUp}
-              className="font-subheading text-[#D4AF37] text-base tracking-widest uppercase mb-3"
+              className="font-['Mulish'] font-light text-[#D4AF37] text-xs tracking-[0.3em] uppercase mb-3"
             >
               Get in Touch
             </motion.p>
@@ -110,7 +110,7 @@ export const InquiryForm = () => {
               viewport={{ once: true, margin: "-100px" }}
               custom={3}
               variants={fadeInUp}
-              className="font-subheading text-[#86895d] text-sm"
+              className="font-['Mulish'] font-light text-[#86895d] text-xs tracking-wider"
             >
               Fields marked with * are required
             </motion.p>

@@ -17,7 +17,7 @@ export const HeroSection = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.2 }}
-          className="font-subheading text-[#54582f] text-base md:text-lg mb-6 tracking-wide"
+          className="font-['Mulish'] font-light text-[#86895d] text-xs md:text-sm mb-6 tracking-[0.3em] uppercase"
         >
           Fineline &middot; Ornamental
         </motion.p>
@@ -44,7 +44,7 @@ export const HeroSection = () => {
           transition={{ duration: 1, delay: 1.1 }}
           className="font-subheading text-[#54582f] text-lg md:text-xl max-w-xl mx-auto leading-relaxed"
         >
-          Made with love, care and presence
+          Art deeply inspired by nature, spirituality &amp; mysticism
         </motion.p>
 
         <motion.p

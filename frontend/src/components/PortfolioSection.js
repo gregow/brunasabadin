@@ -59,7 +59,7 @@ export const PortfolioSection = () => {
             whileInView="visible"
             viewport={{ once: true, margin: "-100px" }}
             variants={fadeIn}
-            className="font-subheading text-[#D4AF37] text-base tracking-widest uppercase mb-3"
+            className="font-['Mulish'] font-light text-[#D4AF37] text-xs tracking-[0.3em] uppercase mb-3"
           >
             Selected Work
           </motion.p>

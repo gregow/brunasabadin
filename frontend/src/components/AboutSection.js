@@ -49,7 +49,7 @@ export const AboutSection = () => {
               viewport={{ once: true, margin: "-100px" }}
               custom={0}
               variants={fadeInUp}
-              className="font-subheading text-[#D4AF37] text-base tracking-widest uppercase mb-3"
+              className="font-['Mulish'] font-light text-[#D4AF37] text-xs tracking-[0.3em] uppercase mb-3"
             >
               The Artist
             </motion.p>
@@ -110,7 +110,7 @@ export const AboutSection = () => {
               variants={fadeInUp}
               className="font-subheading text-[#272b00] text-lg"
             >
-              &ldquo;Each mark is a ritual &mdash; a bridge between the visible and the sacred.&rdquo;
+              &ldquo;Made with love, care and presence.&rdquo;
             </motion.p>
 
             <motion.div
