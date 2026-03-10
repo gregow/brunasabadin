@@ -21,7 +21,7 @@ a:focus-visible,
 button:focus-visible,
 input:focus-visible,
 textarea:focus-visible {
-  outline: 1px solid #D4AF37;
+  outline: 1px solid #7A6C3E;
   outline-offset: 2px;
 }
 
@@ -30,6 +30,6 @@ textarea::-webkit-scrollbar {
   width: 4px;
 }
 textarea::-webkit-scrollbar-thumb {
-  background: rgba(212, 175, 55, 0.3);
+  background: rgba(122, 108, 62, 0.3);
   border-radius: 2px;
 }

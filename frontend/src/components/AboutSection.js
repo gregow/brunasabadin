@@ -31,7 +31,7 @@ export const AboutSection = () => {
             variants={fadeInUp}
           >
             <div className="relative">
-              <div className="absolute -top-4 -left-4 w-full h-full border border-[#D4AF37]/30" />
+              <div className="absolute -top-4 -left-4 w-full h-full border border-[#7A6C3E]/30" />
               <img
                 src={ARTIST_PORTRAIT}
                 alt="Bruna - Tattoo Artist"
@@ -49,7 +49,7 @@ export const AboutSection = () => {
               viewport={{ once: true, margin: "-100px" }}
               custom={0}
               variants={fadeInUp}
-              className="font-['Mulish'] font-light text-[#D4AF37] text-xs tracking-[0.3em] uppercase mb-3"
+              className="font-['Mulish'] font-light text-[#7A6C3E] text-xs tracking-[0.3em] uppercase mb-3"
             >
               The Artist
             </motion.p>
@@ -94,7 +94,7 @@ export const AboutSection = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 data-testid="about-golden-panther-link"
-                className="text-[#D4AF37] font-medium hover:underline underline-offset-4 transition-colors duration-500"
+                className="text-[#7A6C3E] font-medium hover:underline underline-offset-4 transition-colors duration-500"
               >
                 The Golden Panther
               </a>{" "}
@@ -125,7 +125,7 @@ export const AboutSection = () => {
                 (tag) => (
                   <span
                     key={tag}
-                    className="border border-[#D4AF37]/40 text-[#272b00] text-xs tracking-[0.15em] uppercase px-4 py-2 font-body"
+                    className="border border-[#7A6C3E]/40 text-[#272b00] text-xs tracking-[0.15em] uppercase px-4 py-2 font-body"
                   >
                     {tag}
                   </span>

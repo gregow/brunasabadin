@@ -10,7 +10,7 @@ export const HeroSection = () => {
       className="relative min-h-screen flex items-center justify-center overflow-hidden bg-white"
     >
       {/* Gold decorative line top */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-px h-32 bg-gradient-to-b from-transparent to-[#D4AF37]/40" />
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-px h-32 bg-gradient-to-b from-transparent to-[#7A6C3E]/40" />
 
       <div className="relative z-10 text-center px-6 max-w-4xl mx-auto">
         <motion.p
@@ -35,7 +35,7 @@ export const HeroSection = () => {
           initial={{ scaleX: 0 }}
           animate={{ scaleX: 1 }}
           transition={{ duration: 1.2, delay: 0.9 }}
-          className="w-24 h-px bg-[#D4AF37] mx-auto my-8"
+          className="w-24 h-px bg-[#7A6C3E] mx-auto my-8"
         />
 
         <motion.p
@@ -62,7 +62,7 @@ export const HeroSection = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 1.7 }}
-          className="inline-block mt-12 bg-transparent border border-[#D4AF37] text-[#272b00] hover:bg-[#D4AF37] hover:text-white transition-all duration-500 uppercase tracking-[0.25em] text-xs px-10 py-4"
+          className="inline-block mt-12 bg-transparent border border-[#7A6C3E] text-[#272b00] hover:bg-[#7A6C3E] hover:text-white transition-all duration-500 uppercase tracking-[0.25em] text-xs px-10 py-4"
         >
           Book a consultation
         </motion.a>
@@ -75,7 +75,7 @@ export const HeroSection = () => {
         transition={{ delay: 2.2 }}
         className="absolute bottom-10 left-1/2 -translate-x-1/2"
       >
-        <a href="#about" data-testid="scroll-down-indicator" className="text-[#D4AF37]/50 hover:text-[#D4AF37] transition-colors duration-500">
+        <a href="#about" data-testid="scroll-down-indicator" className="text-[#7A6C3E]/50 hover:text-[#7A6C3E] transition-colors duration-500">
           <ChevronDown size={20} className="animate-bounce" />
         </a>
       </motion.div>

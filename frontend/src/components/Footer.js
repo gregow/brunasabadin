@@ -9,7 +9,7 @@ export const Footer = () => {
       className="relative py-20 md:py-28 bg-[#272b00] text-[#FAF9F6] overflow-hidden"
     >
       {/* Gold line top */}
-      <div className="absolute top-0 left-0 w-full h-px bg-[#D4AF37]/40" />
+      <div className="absolute top-0 left-0 w-full h-px bg-[#7A6C3E]/40" />
 
       <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-24 text-center">
         <motion.h3
@@ -35,7 +35,7 @@ export const Footer = () => {
             target="_blank"
             rel="noopener noreferrer"
             data-testid="footer-golden-panther-link"
-            className="text-[#D4AF37] hover:underline underline-offset-4"
+            className="text-[#7A6C3E] hover:underline underline-offset-4"
           >
             The Golden Panther
           </a>
@@ -52,16 +52,16 @@ export const Footer = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.4 }}
-          className="inline-flex items-center gap-3 border border-[#D4AF37]/40 px-8 py-4 hover:border-[#D4AF37] hover:bg-[#D4AF37]/10 transition-all duration-500 group"
+          className="inline-flex items-center gap-3 border border-[#7A6C3E]/40 px-8 py-4 hover:border-[#7A6C3E] hover:bg-[#7A6C3E]/10 transition-all duration-500 group"
         >
-          <Instagram size={16} className="text-[#D4AF37]" />
+          <Instagram size={16} className="text-[#7A6C3E]" />
           <span className="font-body text-xs tracking-[0.2em] uppercase text-[#FAF9F6]/80 group-hover:text-[#FAF9F6]">
             @sabadinnk
           </span>
         </motion.a>
 
         {/* Divider */}
-        <div className="w-12 h-px bg-[#D4AF37]/30 mx-auto my-12" />
+        <div className="w-12 h-px bg-[#7A6C3E]/30 mx-auto my-12" />
 
         {/* Bottom */}
         <motion.div
@@ -76,7 +76,7 @@ export const Footer = () => {
               href="https://www.thegoldenpanther.pt/"
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:text-[#D4AF37] transition-colors duration-500"
+              className="hover:text-[#7A6C3E] transition-colors duration-500"
             >
               The Golden Panther
             </a>
@@ -91,7 +91,7 @@ export const Footer = () => {
               href="https://www.thegoldenpanther.pt/"
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:text-[#D4AF37] transition-colors duration-500"
+              className="hover:text-[#7A6C3E] transition-colors duration-500"
             >
               The Golden Panther
             </a>. All rights reserved.

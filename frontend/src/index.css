@@ -15,7 +15,7 @@
 :root {
   --cream: #FFFFFF;
   --warm-sand: #F7F7F5;
-  --gold: #D4AF37;
+  --gold: #7A6C3E;
   --gold-light: #F3E5AB;
   --text-primary: #272b00;
   --text-secondary: #54582f;
@@ -73,7 +73,7 @@ html {
 
 /* Selection color */
 ::selection {
-  background-color: rgba(212, 175, 55, 0.3);
+  background-color: rgba(122, 108, 62, 0.3);
   color: var(--text-primary);
 }
 

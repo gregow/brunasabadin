@@ -27,7 +27,7 @@ export const StudioSection = () => {
               whileInView="visible"
               viewport={{ once: true, margin: "-100px" }}
               variants={fadeInUp}
-              className="font-['Mulish'] font-light text-[#D4AF37] text-xs tracking-[0.3em] uppercase mb-3"
+              className="font-['Mulish'] font-light text-[#7A6C3E] text-xs tracking-[0.3em] uppercase mb-3"
             >
               Find Me
             </motion.p>
@@ -45,7 +45,7 @@ export const StudioSection = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 data-testid="studio-golden-panther-link"
-                className="hover:text-[#D4AF37] transition-colors duration-500"
+                className="hover:text-[#7A6C3E] transition-colors duration-500"
               >
                 The Golden Panther
               </a>
@@ -60,7 +60,7 @@ export const StudioSection = () => {
                 variants={fadeInUp}
                 className="flex items-start gap-4"
               >
-                <MapPin size={18} className="text-[#D4AF37] mt-1 flex-shrink-0" />
+                <MapPin size={18} className="text-[#7A6C3E] mt-1 flex-shrink-0" />
                 <div>
                   <p className="font-body text-[#272b00] text-sm font-medium uppercase tracking-wider mb-1">
                     Address
@@ -75,7 +75,7 @@ export const StudioSection = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                     data-testid="studio-map-link"
-                    className="inline-block mt-2 font-body text-xs text-[#D4AF37] tracking-wider uppercase hover:text-[#272b00] transition-colors duration-500"
+                    className="inline-block mt-2 font-body text-xs text-[#7A6C3E] tracking-wider uppercase hover:text-[#272b00] transition-colors duration-500"
                   >
                     View on map &rarr;
                   </a>
@@ -90,7 +90,7 @@ export const StudioSection = () => {
                 variants={fadeInUp}
                 className="flex items-start gap-4"
               >
-                <Clock size={18} className="text-[#D4AF37] mt-1 flex-shrink-0" />
+                <Clock size={18} className="text-[#7A6C3E] mt-1 flex-shrink-0" />
                 <div>
                   <p className="font-body text-[#272b00] text-sm font-medium uppercase tracking-wider mb-1">
                     Hours
@@ -109,7 +109,7 @@ export const StudioSection = () => {
                 variants={fadeInUp}
                 className="flex items-start gap-4"
               >
-                <Mail size={18} className="text-[#D4AF37] mt-1 flex-shrink-0" />
+                <Mail size={18} className="text-[#7A6C3E] mt-1 flex-shrink-0" />
                 <div>
                   <p className="font-body text-[#272b00] text-sm font-medium uppercase tracking-wider mb-1">
                     Email
@@ -117,7 +117,7 @@ export const StudioSection = () => {
                   <a
                     href="mailto:sabadinnk@gmail.com"
                     data-testid="studio-email-link"
-                    className="font-body text-[#54582f] text-base hover:text-[#D4AF37] transition-colors duration-500"
+                    className="font-body text-[#54582f] text-base hover:text-[#7A6C3E] transition-colors duration-500"
                   >
                     sabadinnk@gmail.com
                   </a>
@@ -133,7 +133,7 @@ export const StudioSection = () => {
               whileInView="visible"
               viewport={{ once: true, margin: "-100px" }}
               variants={fadeInUp}
-              className="font-['Mulish'] font-light text-[#D4AF37] text-xs tracking-[0.3em] uppercase mb-3"
+              className="font-['Mulish'] font-light text-[#7A6C3E] text-xs tracking-[0.3em] uppercase mb-3"
             >
               On the Road
             </motion.p>
@@ -158,7 +158,7 @@ export const StudioSection = () => {
               className="space-y-6"
             >
               <div className="flex items-start gap-4">
-                <Plane size={18} className="text-[#D4AF37] mt-1 flex-shrink-0" />
+                <Plane size={18} className="text-[#7A6C3E] mt-1 flex-shrink-0" />
                 <div>
                   <p className="font-body text-[#86895d] text-sm">
                     Upcoming guest spots will be announced here and on{" "}
@@ -166,7 +166,7 @@ export const StudioSection = () => {
                       href="https://www.instagram.com/sabadinnk"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-[#D4AF37] hover:underline underline-offset-4"
+                      className="text-[#7A6C3E] hover:underline underline-offset-4"
                     >
                       Instagram
                     </a>.
@@ -176,7 +176,7 @@ export const StudioSection = () => {
 
               {/* Placeholder for future guest spots — easy to add */}
               {/*
-              <div className="border-l-2 border-[#D4AF37]/30 pl-6 space-y-1">
+              <div className="border-l-2 border-[#7A6C3E]/30 pl-6 space-y-1">
                 <p className="font-body text-[#272b00] text-sm font-medium uppercase tracking-wider">
                   Studio Name
                 </p>

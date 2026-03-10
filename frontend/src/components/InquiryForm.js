@@ -59,7 +59,7 @@ export const InquiryForm = () => {
   };
 
   const inputClass =
-    "w-full bg-transparent border-b border-[#272b00]/20 focus:border-[#D4AF37] outline-none rounded-none px-0 py-4 transition-colors duration-500 placeholder:text-[#272b00]/30 font-body text-[#272b00] text-base";
+    "w-full bg-transparent border-b border-[#272b00]/20 focus:border-[#7A6C3E] outline-none rounded-none px-0 py-4 transition-colors duration-500 placeholder:text-[#272b00]/30 font-body text-[#272b00] text-base";
 
   return (
     <section
@@ -76,7 +76,7 @@ export const InquiryForm = () => {
               whileInView="visible"
               viewport={{ once: true, margin: "-100px" }}
               variants={fadeInUp}
-              className="font-['Mulish'] font-light text-[#D4AF37] text-xs tracking-[0.3em] uppercase mb-3"
+              className="font-['Mulish'] font-light text-[#7A6C3E] text-xs tracking-[0.3em] uppercase mb-3"
             >
               Get in Touch
             </motion.p>
@@ -128,7 +128,7 @@ export const InquiryForm = () => {
             <form
               onSubmit={handleSubmit}
               data-testid="inquiry-form"
-              className="bg-white/50 backdrop-blur-sm border border-[#D4AF37]/20 p-8 md:p-12"
+              className="bg-white/50 backdrop-blur-sm border border-[#7A6C3E]/20 p-8 md:p-12"
             >
               <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-2">
                 <div>
@@ -240,7 +240,7 @@ export const InquiryForm = () => {
                   type="submit"
                   data-testid="inquiry-submit-button"
                   disabled={submitting}
-                  className="inline-flex items-center gap-3 bg-transparent border border-[#D4AF37] text-[#272b00] hover:bg-[#D4AF37] hover:text-white disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-500 uppercase tracking-[0.25em] text-xs px-10 py-4 group"
+                  className="inline-flex items-center gap-3 bg-transparent border border-[#7A6C3E] text-[#272b00] hover:bg-[#7A6C3E] hover:text-white disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-500 uppercase tracking-[0.25em] text-xs px-10 py-4 group"
                 >
                   {submitting ? "Sending..." : "Send Inquiry"}
                   <Send

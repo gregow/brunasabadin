@@ -59,7 +59,7 @@ export const PortfolioSection = () => {
             whileInView="visible"
             viewport={{ once: true, margin: "-100px" }}
             variants={fadeIn}
-            className="font-['Mulish'] font-light text-[#D4AF37] text-xs tracking-[0.3em] uppercase mb-3"
+            className="font-['Mulish'] font-light text-[#7A6C3E] text-xs tracking-[0.3em] uppercase mb-3"
           >
             Selected Work
           </motion.p>
@@ -86,7 +86,7 @@ export const PortfolioSection = () => {
               viewport={{ once: true, margin: "-50px" }}
               custom={i}
               variants={fadeIn}
-              className={`${img.span} relative overflow-hidden group cursor-pointer border border-[#D4AF37]/10 hover:border-[#D4AF37]/40 transition-all duration-700`}
+              className={`${img.span} relative overflow-hidden group cursor-pointer border border-[#7A6C3E]/10 hover:border-[#7A6C3E]/40 transition-all duration-700`}
             >
               <img
                 src={img.src}
@@ -112,15 +112,15 @@ export const PortfolioSection = () => {
             target="_blank"
             rel="noopener noreferrer"
             data-testid="portfolio-instagram-link"
-            className="inline-flex items-center gap-3 text-[#272b00] hover:text-[#D4AF37] transition-colors duration-500 group"
+            className="inline-flex items-center gap-3 text-[#272b00] hover:text-[#7A6C3E] transition-colors duration-500 group"
           >
             <span className="font-body text-xs tracking-[0.2em] uppercase">
               See more on Instagram
             </span>
-            <span className="font-subheading text-base text-[#D4AF37]">
+            <span className="font-subheading text-base text-[#7A6C3E]">
               @sabadinnk
             </span>
-            <span className="w-8 h-px bg-[#D4AF37] group-hover:w-16 transition-all duration-500" />
+            <span className="w-8 h-px bg-[#7A6C3E] group-hover:w-16 transition-all duration-500" />
           </a>
         </motion.div>
       </div>
