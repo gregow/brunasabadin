@@ -26,7 +26,7 @@ export const HeroSection = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.5 }}
-          className="font-['Mulish'] font-extralight text-[#272b00] text-4xl sm:text-5xl lg:text-6xl tracking-[0.25em] uppercase"
+          className="font-['NewYork'] font-normal text-[#272b00] text-4xl sm:text-5xl lg:text-6xl tracking-[0.15em]"
         >
           Sabadinnk
         </motion.h1>

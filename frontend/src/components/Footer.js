@@ -17,7 +17,7 @@ export const Footer = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="font-['Mulish'] font-extralight text-3xl md:text-4xl lg:text-5xl mb-6 text-[#FAF9F6] tracking-[0.25em] uppercase"
+          className="font-['NewYork'] font-normal text-3xl md:text-4xl lg:text-5xl mb-6 text-[#FAF9F6] tracking-[0.15em]"
         >
           Sabadinnk
         </motion.h3>
