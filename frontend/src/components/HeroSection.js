@@ -10,7 +10,6 @@ export const HeroSection = () => {
       className="relative min-h-screen flex items-center justify-center overflow-hidden bg-white"
     >
       {/* Gold decorative line top */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-px h-32 bg-gradient-to-b from-transparent to-[#7A6C3E]/40" />
 
       <div className="relative z-10 text-center px-6 max-w-4xl mx-auto">
         <motion.p

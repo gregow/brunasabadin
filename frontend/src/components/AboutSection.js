@@ -1,8 +1,8 @@
 import React from "react";
 import { motion } from "framer-motion";
 
-// Easy to swap: replace with your own portrait photo
-const ARTIST_PORTRAIT = "https://images.unsplash.com/photo-1751891030605-e7dbf7692a39?crop=entropy&cs=srgb&fm=jpg&q=85&w=800";
+// Easy to swap: replace the video URL with your own video file
+const ARTIST_VIDEO = "/video/artist-reel.mp4";
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 40 },
@@ -22,7 +22,7 @@ export const AboutSection = () => {
     >
       <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12 lg:px-24">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-center">
-          {/* Image */}
+          {/* Video */}
           <motion.div
             className="lg:col-span-5"
             initial="hidden"
@@ -32,11 +32,14 @@ export const AboutSection = () => {
           >
             <div className="relative">
               <div className="absolute -top-4 -left-4 w-full h-full border border-[#7A6C3E]/30" />
-              <img
-                src={ARTIST_PORTRAIT}
-                alt="Bruna - Tattoo Artist"
-                data-testid="about-artist-image"
-                className="relative w-full aspect-[3/4] object-cover grayscale hover:grayscale-0 transition-all duration-1000"
+              <video
+                src={ARTIST_VIDEO}
+                autoPlay
+                loop
+                muted
+                playsInline
+                data-testid="about-artist-video"
+                className="relative w-full aspect-[3/4] object-cover"
               />
             </div>
           </motion.div>

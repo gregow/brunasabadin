@@ -12,6 +12,10 @@ import { Footer } from "@/components/Footer";
 const LandingPage = () => {
   return (
     <div data-testid="landing-page">
+      {/* SEO: visually hidden but crawlable heading */}
+      <h1 className="sr-only">
+        Sabadinnk — Bruna Sabadin | Delicate Fineline & Ornamental Tattoo Artist in Porto, Portugal
+      </h1>
       <Header />
       <main>
         <HeroSection />
