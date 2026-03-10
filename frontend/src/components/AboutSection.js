@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { useLanguage } from "@/i18n/LanguageContext";
 
 // Easy to swap: replace the video URL with your own video file
 const ARTIST_VIDEO = "/video/artist-reel.mp4";
@@ -14,6 +15,8 @@ const fadeInUp = {
 };
 
 export const AboutSection = () => {
+  const { t } = useLanguage();
+
   return (
     <section
       id="about"
@@ -54,7 +57,7 @@ export const AboutSection = () => {
               variants={fadeInUp}
               className="font-['Mulish'] font-light text-[#7A6C3E] text-xs tracking-[0.3em] uppercase mb-3"
             >
-              The Artist
+              {t("about_label")}
             </motion.p>
 
             <motion.h2
@@ -65,7 +68,7 @@ export const AboutSection = () => {
               variants={fadeInUp}
               className="font-['Mulish'] font-extralight text-[#272b00] text-2xl sm:text-3xl lg:text-4xl mb-8 tracking-[0.2em] uppercase"
             >
-              About Bruna
+              {t("about_title")}
             </motion.h2>
 
             <motion.p
@@ -76,10 +79,7 @@ export const AboutSection = () => {
               variants={fadeInUp}
               className="font-body text-[#54582f] text-base leading-relaxed mb-6"
             >
-              Bruna is a tattoo artist based in Porto, Portugal, specializing in
-              Fineline and Ornamental styles. Her art is deeply inspired by nature,
-              spirituality, and mysticism &mdash; themes that are reflected in every
-              detailed and symbolic stroke she creates.
+              {t("about_p1")}
             </motion.p>
 
             <motion.p
@@ -90,8 +90,7 @@ export const AboutSection = () => {
               variants={fadeInUp}
               className="font-body text-[#54582f] text-base leading-relaxed mb-6"
             >
-              Each tattoo is created in a fully personalized way, seeking to express
-              the essence and the unique stories of every client. Working at{" "}
+              {t("about_p2_pre")}
               <a
                 href="https://www.thegoldenpanther.pt/"
                 target="_blank"
@@ -99,10 +98,9 @@ export const AboutSection = () => {
                 data-testid="about-golden-panther-link"
                 className="text-[#7A6C3E] font-medium hover:underline underline-offset-4 transition-colors duration-500"
               >
-                The Golden Panther
-              </a>{" "}
-              studio, Bruna brings together precision, creativity, and a deep
-              connection with the sacred geometry found in nature.
+                {t("about_p2_link")}
+              </a>
+              {t("about_p2_post")}
             </motion.p>
 
             <motion.p
@@ -113,7 +111,7 @@ export const AboutSection = () => {
               variants={fadeInUp}
               className="font-subheading text-[#272b00] text-lg"
             >
-              &ldquo;Made with love, care and presence.&rdquo;
+              {t("about_quote")}
             </motion.p>
 
             <motion.div
@@ -124,7 +122,7 @@ export const AboutSection = () => {
               variants={fadeInUp}
               className="flex flex-wrap gap-3 mt-8"
             >
-              {["Fineline", "Ornamental", "Nature", "Spirituality"].map(
+              {[t("tag_fineline"), t("tag_ornamental"), t("tag_nature"), t("tag_spirituality")].map(
                 (tag) => (
                   <span
                     key={tag}

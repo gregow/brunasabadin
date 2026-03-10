@@ -1,16 +1,17 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { ChevronDown } from "lucide-react";
+import { useLanguage } from "@/i18n/LanguageContext";
 
 export const HeroSection = () => {
+  const { t } = useLanguage();
+
   return (
     <section
       id="hero"
       data-testid="hero-section"
       className="relative min-h-screen flex items-center justify-center overflow-hidden bg-white"
     >
-      {/* Gold decorative line top */}
-
       <div className="relative z-10 text-center px-6 max-w-4xl mx-auto">
         <motion.p
           initial={{ opacity: 0, y: 20 }}
@@ -18,7 +19,7 @@ export const HeroSection = () => {
           transition={{ duration: 1, delay: 0.2 }}
           className="font-['Mulish'] font-light text-[#86895d] text-xs md:text-sm mb-6 tracking-[0.3em] uppercase"
         >
-          Fineline &middot; Ornamental
+          {t("hero_subtitle")}
         </motion.p>
 
         <motion.h1
@@ -27,7 +28,7 @@ export const HeroSection = () => {
           transition={{ duration: 1, delay: 0.5 }}
           className="font-['NewYork'] font-normal text-[#272b00] text-4xl sm:text-5xl lg:text-6xl tracking-[0.15em]"
         >
-          Sabadinnk
+          {t("hero_name")}
         </motion.h1>
 
         <motion.div
@@ -43,7 +44,7 @@ export const HeroSection = () => {
           transition={{ duration: 1, delay: 1.1 }}
           className="font-subheading text-[#54582f] text-lg md:text-xl max-w-xl mx-auto leading-relaxed"
         >
-          Art deeply inspired by nature, spirituality &amp; mysticism
+          {t("hero_tagline")}
         </motion.p>
 
         <motion.p
@@ -52,7 +53,7 @@ export const HeroSection = () => {
           transition={{ duration: 1, delay: 1.4 }}
           className="font-body text-[#86895d] text-sm mt-4 tracking-widest uppercase"
         >
-          Porto, Portugal
+          {t("hero_location")}
         </motion.p>
 
         <motion.a
@@ -63,11 +64,10 @@ export const HeroSection = () => {
           transition={{ duration: 1, delay: 1.7 }}
           className="inline-block mt-12 bg-transparent border border-[#7A6C3E] text-[#272b00] hover:bg-[#7A6C3E] hover:text-white transition-all duration-500 uppercase tracking-[0.25em] text-xs px-10 py-4"
         >
-          Book a consultation
+          {t("hero_cta")}
         </motion.a>
       </div>
 
-      {/* Scroll indicator */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}

@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { toast } from "sonner";
 import axios from "axios";
 import { Send } from "lucide-react";
+import { useLanguage } from "@/i18n/LanguageContext";
 
 const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
 const API = `${BACKEND_URL}/api`;
@@ -17,6 +18,7 @@ const fadeInUp = {
 };
 
 export const InquiryForm = () => {
+  const { t } = useLanguage();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -35,24 +37,16 @@ export const InquiryForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (!formData.name || !formData.email || !formData.tattoo_description) {
-      toast.error("Please fill in all required fields.");
+      toast.error(t("inquiry_validation"));
       return;
     }
     setSubmitting(true);
     try {
       await axios.post(`${API}/inquiries`, formData);
-      toast.success("Inquiry sent! Bruna will get back to you soon.");
-      setFormData({
-        name: "",
-        email: "",
-        phone: "",
-        tattoo_description: "",
-        placement: "",
-        size: "",
-        reference_style: "",
-      });
+      toast.success(t("inquiry_success"));
+      setFormData({ name: "", email: "", phone: "", tattoo_description: "", placement: "", size: "", reference_style: "" });
     } catch (err) {
-      toast.error("Something went wrong. Please try again.");
+      toast.error(t("inquiry_error"));
     } finally {
       setSubmitting(false);
     }
@@ -62,191 +56,67 @@ export const InquiryForm = () => {
     "w-full bg-transparent border-b border-[#272b00]/20 focus:border-[#7A6C3E] outline-none rounded-none px-0 py-4 transition-colors duration-500 placeholder:text-[#272b00]/30 font-body text-[#272b00] text-base";
 
   return (
-    <section
-      id="inquiry"
-      data-testid="inquiry-section"
-      className="py-24 md:py-32 bg-white"
-    >
+    <section id="inquiry" data-testid="inquiry-section" className="py-24 md:py-32 bg-white">
       <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-24">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20">
-          {/* Left - intro text */}
           <div className="lg:col-span-4">
-            <motion.p
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, margin: "-100px" }}
-              variants={fadeInUp}
-              className="font-['Mulish'] font-light text-[#7A6C3E] text-xs tracking-[0.3em] uppercase mb-3"
-            >
-              Get in Touch
+            <motion.p initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }} variants={fadeInUp}
+              className="font-['Mulish'] font-light text-[#7A6C3E] text-xs tracking-[0.3em] uppercase mb-3">
+              {t("inquiry_label")}
             </motion.p>
-
-            <motion.h2
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, margin: "-100px" }}
-              custom={1}
-              variants={fadeInUp}
-              className="font-['Mulish'] font-extralight text-[#272b00] text-2xl sm:text-3xl lg:text-4xl mb-8 tracking-[0.2em] uppercase"
-            >
-              Tattoo Inquiry
+            <motion.h2 initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }} custom={1} variants={fadeInUp}
+              className="font-['Mulish'] font-extralight text-[#272b00] text-2xl sm:text-3xl lg:text-4xl mb-8 tracking-[0.2em] uppercase">
+              {t("inquiry_title")}
             </motion.h2>
-
-            <motion.p
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, margin: "-100px" }}
-              custom={2}
-              variants={fadeInUp}
-              className="font-body text-[#54582f] text-base leading-relaxed mb-6"
-            >
-              Every piece begins with a conversation. Share your ideas, and
-              together we&rsquo;ll create something unique that tells your story.
+            <motion.p initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }} custom={2} variants={fadeInUp}
+              className="font-body text-[#54582f] text-base leading-relaxed mb-6">
+              {t("inquiry_intro")}
             </motion.p>
-
-            <motion.p
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, margin: "-100px" }}
-              custom={3}
-              variants={fadeInUp}
-              className="font-['Mulish'] font-light text-[#86895d] text-xs tracking-wider"
-            >
-              Fields marked with * are required
+            <motion.p initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }} custom={3} variants={fadeInUp}
+              className="font-['Mulish'] font-light text-[#86895d] text-xs tracking-wider">
+              {t("inquiry_required")}
             </motion.p>
           </div>
 
-          {/* Right - form */}
-          <motion.div
-            className="lg:col-span-8"
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-100px" }}
-            custom={2}
-            variants={fadeInUp}
-          >
-            <form
-              onSubmit={handleSubmit}
-              data-testid="inquiry-form"
-              className="bg-white/50 backdrop-blur-sm border border-[#7A6C3E]/20 p-8 md:p-12"
-            >
+          <motion.div className="lg:col-span-8" initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }} custom={2} variants={fadeInUp}>
+            <form onSubmit={handleSubmit} data-testid="inquiry-form" className="bg-white/50 backdrop-blur-sm border border-[#7A6C3E]/20 p-8 md:p-12">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-2">
                 <div>
-                  <label className="font-body text-xs tracking-[0.15em] uppercase text-[#54582f]">
-                    Name *
-                  </label>
-                  <input
-                    type="text"
-                    name="name"
-                    data-testid="inquiry-name-input"
-                    value={formData.name}
-                    onChange={handleChange}
-                    placeholder="Your name"
-                    className={inputClass}
-                    required
-                  />
+                  <label className="font-body text-xs tracking-[0.15em] uppercase text-[#54582f]">{t("field_name")} *</label>
+                  <input type="text" name="name" data-testid="inquiry-name-input" value={formData.name} onChange={handleChange} placeholder={t("placeholder_name")} className={inputClass} required />
                 </div>
                 <div>
-                  <label className="font-body text-xs tracking-[0.15em] uppercase text-[#54582f]">
-                    Email *
-                  </label>
-                  <input
-                    type="email"
-                    name="email"
-                    data-testid="inquiry-email-input"
-                    value={formData.email}
-                    onChange={handleChange}
-                    placeholder="your@email.com"
-                    className={inputClass}
-                    required
-                  />
+                  <label className="font-body text-xs tracking-[0.15em] uppercase text-[#54582f]">{t("field_email")} *</label>
+                  <input type="email" name="email" data-testid="inquiry-email-input" value={formData.email} onChange={handleChange} placeholder={t("placeholder_email")} className={inputClass} required />
                 </div>
                 <div>
-                  <label className="font-body text-xs tracking-[0.15em] uppercase text-[#54582f]">
-                    Instagram
-                  </label>
-                  <input
-                    type="text"
-                    name="phone"
-                    data-testid="inquiry-instagram-input"
-                    value={formData.phone}
-                    onChange={handleChange}
-                    placeholder="@yourhandle"
-                    className={inputClass}
-                  />
+                  <label className="font-body text-xs tracking-[0.15em] uppercase text-[#54582f]">{t("field_instagram")}</label>
+                  <input type="text" name="phone" data-testid="inquiry-instagram-input" value={formData.phone} onChange={handleChange} placeholder={t("placeholder_instagram")} className={inputClass} />
                 </div>
                 <div>
-                  <label className="font-body text-xs tracking-[0.15em] uppercase text-[#54582f]">
-                    Body Placement
-                  </label>
-                  <input
-                    type="text"
-                    name="placement"
-                    data-testid="inquiry-placement-input"
-                    value={formData.placement}
-                    onChange={handleChange}
-                    placeholder="e.g. forearm, back, ankle..."
-                    className={inputClass}
-                  />
+                  <label className="font-body text-xs tracking-[0.15em] uppercase text-[#54582f]">{t("field_placement")}</label>
+                  <input type="text" name="placement" data-testid="inquiry-placement-input" value={formData.placement} onChange={handleChange} placeholder={t("placeholder_placement")} className={inputClass} />
                 </div>
                 <div>
-                  <label className="font-body text-xs tracking-[0.15em] uppercase text-[#54582f]">
-                    Approximate Size
-                  </label>
-                  <input
-                    type="text"
-                    name="size"
-                    data-testid="inquiry-size-input"
-                    value={formData.size}
-                    onChange={handleChange}
-                    placeholder="e.g. 10cm, half sleeve..."
-                    className={inputClass}
-                  />
+                  <label className="font-body text-xs tracking-[0.15em] uppercase text-[#54582f]">{t("field_size")}</label>
+                  <input type="text" name="size" data-testid="inquiry-size-input" value={formData.size} onChange={handleChange} placeholder={t("placeholder_size")} className={inputClass} />
                 </div>
                 <div>
-                  <label className="font-body text-xs tracking-[0.15em] uppercase text-[#54582f]">
-                    Preferred Style
-                  </label>
-                  <input
-                    type="text"
-                    name="reference_style"
-                    data-testid="inquiry-style-input"
-                    value={formData.reference_style}
-                    onChange={handleChange}
-                    placeholder="Fineline, Ornamental..."
-                    className={inputClass}
-                  />
+                  <label className="font-body text-xs tracking-[0.15em] uppercase text-[#54582f]">{t("field_style")}</label>
+                  <input type="text" name="reference_style" data-testid="inquiry-style-input" value={formData.reference_style} onChange={handleChange} placeholder={t("placeholder_style")} className={inputClass} />
                 </div>
               </div>
 
               <div className="mt-6">
-                <label className="font-body text-xs tracking-[0.15em] uppercase text-[#54582f]">
-                  Describe Your Tattoo Idea *
-                </label>
-                <textarea
-                  name="tattoo_description"
-                  data-testid="inquiry-description-input"
-                  value={formData.tattoo_description}
-                  onChange={handleChange}
-                  placeholder="Tell me about your vision, the symbols, themes or elements you'd like to include..."
-                  rows={4}
-                  className={`${inputClass} resize-none`}
-                  required
-                />
+                <label className="font-body text-xs tracking-[0.15em] uppercase text-[#54582f]">{t("field_description")} *</label>
+                <textarea name="tattoo_description" data-testid="inquiry-description-input" value={formData.tattoo_description} onChange={handleChange} placeholder={t("placeholder_description")} rows={4} className={`${inputClass} resize-none`} required />
               </div>
 
               <div className="mt-10 flex justify-end">
-                <button
-                  type="submit"
-                  data-testid="inquiry-submit-button"
-                  disabled={submitting}
-                  className="inline-flex items-center gap-3 bg-transparent border border-[#7A6C3E] text-[#272b00] hover:bg-[#7A6C3E] hover:text-white disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-500 uppercase tracking-[0.25em] text-xs px-10 py-4 group"
-                >
-                  {submitting ? "Sending..." : "Send Inquiry"}
-                  <Send
-                    size={14}
-                    className="group-hover:translate-x-1 transition-transform duration-500"
-                  />
+                <button type="submit" data-testid="inquiry-submit-button" disabled={submitting}
+                  className="inline-flex items-center gap-3 bg-transparent border border-[#7A6C3E] text-[#272b00] hover:bg-[#7A6C3E] hover:text-white disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-500 uppercase tracking-[0.25em] text-xs px-10 py-4 group">
+                  {submitting ? t("inquiry_sending") : t("inquiry_submit")}
+                  <Send size={14} className="group-hover:translate-x-1 transition-transform duration-500" />
                 </button>
               </div>
             </form>

@@ -1,6 +1,7 @@
 import "@/App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Toaster } from "sonner";
+import { LanguageProvider } from "@/i18n/LanguageContext";
 import { Header } from "@/components/Header";
 import { HeroSection } from "@/components/HeroSection";
 import { AboutSection } from "@/components/AboutSection";
@@ -31,21 +32,23 @@ const LandingPage = () => {
 
 function App() {
   return (
-    <BrowserRouter>
-      <Toaster
-        position="bottom-right"
-        theme="light"
-        toastOptions={{
-          style: {
-            fontFamily: '"Mulish", sans-serif',
-            fontSize: '14px',
-          },
-        }}
-      />
-      <Routes>
-        <Route path="/" element={<LandingPage />} />
-      </Routes>
-    </BrowserRouter>
+    <LanguageProvider>
+      <BrowserRouter>
+        <Toaster
+          position="bottom-right"
+          theme="light"
+          toastOptions={{
+            style: {
+              fontFamily: '"Mulish", sans-serif',
+              fontSize: '14px',
+            },
+          }}
+        />
+        <Routes>
+          <Route path="/" element={<LandingPage />} />
+        </Routes>
+      </BrowserRouter>
+    </LanguageProvider>
   );
 }
 
