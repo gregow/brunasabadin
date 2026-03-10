@@ -59,7 +59,7 @@ export const InquiryForm = () => {
   };
 
   const inputClass =
-    "w-full bg-transparent border-b border-[#3D4F2F]/20 focus:border-[#D4AF37] outline-none rounded-none px-0 py-4 transition-colors duration-500 placeholder:text-[#3D4F2F]/30 font-body text-[#3D4F2F] text-base";
+    "w-full bg-transparent border-b border-[#272b00]/20 focus:border-[#D4AF37] outline-none rounded-none px-0 py-4 transition-colors duration-500 placeholder:text-[#272b00]/30 font-body text-[#272b00] text-base";
 
   return (
     <section
@@ -87,7 +87,7 @@ export const InquiryForm = () => {
               viewport={{ once: true, margin: "-100px" }}
               custom={1}
               variants={fadeInUp}
-              className="font-['Mulish'] font-extralight text-[#3D4F2F] text-2xl sm:text-3xl lg:text-4xl mb-8 tracking-[0.2em] uppercase"
+              className="font-['Mulish'] font-extralight text-[#272b00] text-2xl sm:text-3xl lg:text-4xl mb-8 tracking-[0.2em] uppercase"
             >
               Tattoo Inquiry
             </motion.h2>
@@ -98,7 +98,7 @@ export const InquiryForm = () => {
               viewport={{ once: true, margin: "-100px" }}
               custom={2}
               variants={fadeInUp}
-              className="font-body text-[#5B6B4F] text-base leading-relaxed mb-6"
+              className="font-body text-[#54582f] text-base leading-relaxed mb-6"
             >
               Every piece begins with a conversation. Share your ideas, and
               together we&rsquo;ll create something unique that tells your story.
@@ -110,7 +110,7 @@ export const InquiryForm = () => {
               viewport={{ once: true, margin: "-100px" }}
               custom={3}
               variants={fadeInUp}
-              className="font-subheading text-[#3D4F2F]/60 text-sm"
+              className="font-subheading text-[#86895d] text-sm"
             >
               Fields marked with * are required
             </motion.p>
@@ -132,7 +132,7 @@ export const InquiryForm = () => {
             >
               <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-2">
                 <div>
-                  <label className="font-body text-xs tracking-[0.15em] uppercase text-[#5B6B4F]">
+                  <label className="font-body text-xs tracking-[0.15em] uppercase text-[#54582f]">
                     Name *
                   </label>
                   <input
@@ -147,7 +147,7 @@ export const InquiryForm = () => {
                   />
                 </div>
                 <div>
-                  <label className="font-body text-xs tracking-[0.15em] uppercase text-[#5B6B4F]">
+                  <label className="font-body text-xs tracking-[0.15em] uppercase text-[#54582f]">
                     Email *
                   </label>
                   <input
@@ -162,21 +162,21 @@ export const InquiryForm = () => {
                   />
                 </div>
                 <div>
-                  <label className="font-body text-xs tracking-[0.15em] uppercase text-[#5B6B4F]">
-                    Phone
+                  <label className="font-body text-xs tracking-[0.15em] uppercase text-[#54582f]">
+                    Instagram
                   </label>
                   <input
-                    type="tel"
+                    type="text"
                     name="phone"
-                    data-testid="inquiry-phone-input"
+                    data-testid="inquiry-instagram-input"
                     value={formData.phone}
                     onChange={handleChange}
-                    placeholder="+351..."
+                    placeholder="@yourhandle"
                     className={inputClass}
                   />
                 </div>
                 <div>
-                  <label className="font-body text-xs tracking-[0.15em] uppercase text-[#5B6B4F]">
+                  <label className="font-body text-xs tracking-[0.15em] uppercase text-[#54582f]">
                     Body Placement
                   </label>
                   <input
@@ -190,7 +190,7 @@ export const InquiryForm = () => {
                   />
                 </div>
                 <div>
-                  <label className="font-body text-xs tracking-[0.15em] uppercase text-[#5B6B4F]">
+                  <label className="font-body text-xs tracking-[0.15em] uppercase text-[#54582f]">
                     Approximate Size
                   </label>
                   <input
@@ -204,7 +204,7 @@ export const InquiryForm = () => {
                   />
                 </div>
                 <div>
-                  <label className="font-body text-xs tracking-[0.15em] uppercase text-[#5B6B4F]">
+                  <label className="font-body text-xs tracking-[0.15em] uppercase text-[#54582f]">
                     Preferred Style
                   </label>
                   <input
@@ -213,14 +213,14 @@ export const InquiryForm = () => {
                     data-testid="inquiry-style-input"
                     value={formData.reference_style}
                     onChange={handleChange}
-                    placeholder="Fineline, Ornamental, Azulejo..."
+                    placeholder="Fineline, Ornamental..."
                     className={inputClass}
                   />
                 </div>
               </div>
 
               <div className="mt-6">
-                <label className="font-body text-xs tracking-[0.15em] uppercase text-[#526770]">
+                <label className="font-body text-xs tracking-[0.15em] uppercase text-[#54582f]">
                   Describe Your Tattoo Idea *
                 </label>
                 <textarea
@@ -240,7 +240,7 @@ export const InquiryForm = () => {
                   type="submit"
                   data-testid="inquiry-submit-button"
                   disabled={submitting}
-                  className="inline-flex items-center gap-3 bg-transparent border border-[#D4AF37] text-[#3D4F2F] hover:bg-[#D4AF37] hover:text-white disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-500 uppercase tracking-[0.25em] text-xs px-10 py-4 group"
+                  className="inline-flex items-center gap-3 bg-transparent border border-[#D4AF37] text-[#272b00] hover:bg-[#D4AF37] hover:text-white disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-500 uppercase tracking-[0.25em] text-xs px-10 py-4 group"
                 >
                   {submitting ? "Sending..." : "Send Inquiry"}
                   <Send

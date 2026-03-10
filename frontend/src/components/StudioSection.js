@@ -1,9 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { MapPin, Clock, Mail } from "lucide-react";
-
-// Easy to swap: replace with your own studio photo
-const STUDIO_IMAGE = "https://images.unsplash.com/photo-1762786924414-5bf363f57d86?crop=entropy&cs=srgb&fm=jpg&q=85&w=900";
+import { MapPin, Clock, Mail, Plane } from "lucide-react";
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 40 },
@@ -22,9 +19,9 @@ export const StudioSection = () => {
       className="relative py-24 md:py-32 bg-[#F7F7F5]"
     >
       <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-24">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20">
-          {/* Text content */}
-          <div className="lg:col-span-5 flex flex-col justify-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24">
+          {/* The Golden Panther */}
+          <div>
             <motion.p
               initial="hidden"
               whileInView="visible"
@@ -41,9 +38,17 @@ export const StudioSection = () => {
               viewport={{ once: true, margin: "-100px" }}
               custom={1}
               variants={fadeInUp}
-              className="font-['Mulish'] font-extralight text-[#3D4F2F] text-2xl sm:text-3xl lg:text-4xl mb-10 tracking-[0.2em] uppercase"
+              className="font-['Mulish'] font-extralight text-[#272b00] text-xl sm:text-2xl mb-8 tracking-[0.2em] uppercase"
             >
-              The Studio
+              <a
+                href="https://www.thegoldenpanther.pt/"
+                target="_blank"
+                rel="noopener noreferrer"
+                data-testid="studio-golden-panther-link"
+                className="hover:text-[#D4AF37] transition-colors duration-500"
+              >
+                The Golden Panther
+              </a>
             </motion.h2>
 
             <div className="space-y-8">
@@ -57,10 +62,10 @@ export const StudioSection = () => {
               >
                 <MapPin size={18} className="text-[#D4AF37] mt-1 flex-shrink-0" />
                 <div>
-                  <p className="font-body text-[#3D4F2F] text-sm font-medium uppercase tracking-wider mb-1">
+                  <p className="font-body text-[#272b00] text-sm font-medium uppercase tracking-wider mb-1">
                     Address
                   </p>
-                  <p className="font-body text-[#5B6B4F] text-base leading-relaxed">
+                  <p className="font-body text-[#54582f] text-base leading-relaxed">
                     Rua da Firmeza, 457, 2&ordm; andar
                     <br />
                     Porto, Portugal
@@ -70,7 +75,7 @@ export const StudioSection = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                     data-testid="studio-map-link"
-                    className="inline-block mt-2 font-body text-xs text-[#D4AF37] tracking-wider uppercase hover:text-[#2F3E46] transition-colors duration-500"
+                    className="inline-block mt-2 font-body text-xs text-[#D4AF37] tracking-wider uppercase hover:text-[#272b00] transition-colors duration-500"
                   >
                     View on map &rarr;
                   </a>
@@ -87,10 +92,10 @@ export const StudioSection = () => {
               >
                 <Clock size={18} className="text-[#D4AF37] mt-1 flex-shrink-0" />
                 <div>
-                  <p className="font-body text-[#3D4F2F] text-sm font-medium uppercase tracking-wider mb-1">
+                  <p className="font-body text-[#272b00] text-sm font-medium uppercase tracking-wider mb-1">
                     Hours
                   </p>
-                  <p className="font-body text-[#5B6B4F] text-base">
+                  <p className="font-body text-[#54582f] text-base">
                     By appointment only
                   </p>
                 </div>
@@ -106,13 +111,13 @@ export const StudioSection = () => {
               >
                 <Mail size={18} className="text-[#D4AF37] mt-1 flex-shrink-0" />
                 <div>
-                  <p className="font-body text-[#3D4F2F] text-sm font-medium uppercase tracking-wider mb-1">
+                  <p className="font-body text-[#272b00] text-sm font-medium uppercase tracking-wider mb-1">
                     Email
                   </p>
                   <a
                     href="mailto:sabadinnk@gmail.com"
                     data-testid="studio-email-link"
-                    className="font-body text-[#5B6B4F] text-base hover:text-[#D4AF37] transition-colors duration-500"
+                    className="font-body text-[#54582f] text-base hover:text-[#D4AF37] transition-colors duration-500"
                   >
                     sabadinnk@gmail.com
                   </a>
@@ -121,25 +126,66 @@ export const StudioSection = () => {
             </div>
           </div>
 
-          {/* Studio image */}
-          <motion.div
-            className="lg:col-span-7"
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-100px" }}
-            custom={2}
-            variants={fadeInUp}
-          >
-            <div className="relative">
-              <div className="absolute -bottom-4 -right-4 w-full h-full border border-[#D4AF37]/30" />
-              <img
-                src={STUDIO_IMAGE}
-                alt="The Golden Panther Studio - Porto"
-                data-testid="studio-image"
-                className="relative w-full aspect-[4/3] object-cover"
-              />
-            </div>
-          </motion.div>
+          {/* Guest Spots */}
+          <div>
+            <motion.p
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, margin: "-100px" }}
+              variants={fadeInUp}
+              className="font-subheading text-[#D4AF37] text-base tracking-widest uppercase mb-3"
+            >
+              On the Road
+            </motion.p>
+
+            <motion.h2
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, margin: "-100px" }}
+              custom={1}
+              variants={fadeInUp}
+              className="font-['Mulish'] font-extralight text-[#272b00] text-xl sm:text-2xl mb-8 tracking-[0.2em] uppercase"
+            >
+              Guest Spots
+            </motion.h2>
+
+            <motion.div
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              custom={2}
+              variants={fadeInUp}
+              className="space-y-6"
+            >
+              <div className="flex items-start gap-4">
+                <Plane size={18} className="text-[#D4AF37] mt-1 flex-shrink-0" />
+                <div>
+                  <p className="font-body text-[#86895d] text-sm italic">
+                    Upcoming guest spots will be announced here and on{" "}
+                    <a
+                      href="https://www.instagram.com/sabadinnk"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-[#D4AF37] hover:underline underline-offset-4"
+                    >
+                      Instagram
+                    </a>.
+                  </p>
+                </div>
+              </div>
+
+              {/* Placeholder for future guest spots — easy to add */}
+              {/*
+              <div className="border-l-2 border-[#D4AF37]/30 pl-6 space-y-1">
+                <p className="font-body text-[#272b00] text-sm font-medium uppercase tracking-wider">
+                  Studio Name
+                </p>
+                <p className="font-body text-[#54582f] text-base">City, Country</p>
+                <p className="font-body text-[#86895d] text-sm">Jan 15 — Jan 28, 2026</p>
+              </div>
+              */}
+            </motion.div>
+          </div>
         </div>
       </div>
     </section>

@@ -60,7 +60,7 @@ export const AboutSection = () => {
               viewport={{ once: true, margin: "-100px" }}
               custom={1}
               variants={fadeInUp}
-              className="font-['Mulish'] font-extralight text-[#3D4F2F] text-2xl sm:text-3xl lg:text-4xl mb-8 tracking-[0.2em] uppercase"
+              className="font-['Mulish'] font-extralight text-[#272b00] text-2xl sm:text-3xl lg:text-4xl mb-8 tracking-[0.2em] uppercase"
             >
               About Bruna
             </motion.h2>
@@ -71,12 +71,12 @@ export const AboutSection = () => {
               viewport={{ once: true, margin: "-100px" }}
               custom={2}
               variants={fadeInUp}
-              className="font-body text-[#5B6B4F] text-base leading-relaxed mb-6"
+              className="font-body text-[#54582f] text-base leading-relaxed mb-6"
             >
               Bruna is a tattoo artist based in Porto, Portugal, specializing in
-              Fineline, Ornamental, and Azulejo Portugu&ecirc;s styles. Her art is
-              deeply inspired by nature, spirituality, and mysticism &mdash; themes
-              that are reflected in every detailed and symbolic stroke she creates.
+              Fineline and Ornamental styles. Her art is deeply inspired by nature,
+              spirituality, and mysticism &mdash; themes that are reflected in every
+              detailed and symbolic stroke she creates.
             </motion.p>
 
             <motion.p
@@ -85,11 +85,19 @@ export const AboutSection = () => {
               viewport={{ once: true, margin: "-100px" }}
               custom={3}
               variants={fadeInUp}
-              className="font-body text-[#5B6B4F] text-base leading-relaxed mb-6"
+              className="font-body text-[#54582f] text-base leading-relaxed mb-6"
             >
               Each tattoo is created in a fully personalized way, seeking to express
               the essence and the unique stories of every client. Working at{" "}
-              <span className="text-[#D4AF37] font-medium">The Golden Panther</span>{" "}
+              <a
+                href="https://www.thegoldenpanther.pt/"
+                target="_blank"
+                rel="noopener noreferrer"
+                data-testid="about-golden-panther-link"
+                className="text-[#D4AF37] font-medium hover:underline underline-offset-4 transition-colors duration-500"
+              >
+                The Golden Panther
+              </a>{" "}
               studio, Bruna brings together precision, creativity, and a deep
               connection with the sacred geometry found in nature.
             </motion.p>
@@ -100,9 +108,9 @@ export const AboutSection = () => {
               viewport={{ once: true, margin: "-100px" }}
               custom={4}
               variants={fadeInUp}
-              className="font-subheading text-[#3D4F2F] text-lg"
+              className="font-subheading text-[#272b00] text-lg"
             >
-              &ldquo;Every tattoo tells a story &mdash; yours, written on skin.&rdquo;
+              &ldquo;Each mark is a ritual &mdash; a bridge between the visible and the sacred.&rdquo;
             </motion.p>
 
             <motion.div
@@ -113,11 +121,11 @@ export const AboutSection = () => {
               variants={fadeInUp}
               className="flex flex-wrap gap-3 mt-8"
             >
-              {["Fineline", "Ornamental", "Nature", "Spirituality", "Azulejo"].map(
+              {["Fineline", "Ornamental", "Nature", "Spirituality"].map(
                 (tag) => (
                   <span
                     key={tag}
-                    className="border border-[#D4AF37]/40 text-[#3D4F2F] text-xs tracking-[0.15em] uppercase px-4 py-2 font-body"
+                    className="border border-[#D4AF37]/40 text-[#272b00] text-xs tracking-[0.15em] uppercase px-4 py-2 font-body"
                   >
                     {tag}
                   </span>

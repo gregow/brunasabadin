@@ -69,7 +69,7 @@ export const PortfolioSection = () => {
             viewport={{ once: true, margin: "-100px" }}
             custom={1}
             variants={fadeIn}
-            className="font-['Mulish'] font-extralight text-[#3D4F2F] text-2xl sm:text-3xl lg:text-4xl tracking-[0.2em] uppercase"
+            className="font-['Mulish'] font-extralight text-[#272b00] text-2xl sm:text-3xl lg:text-4xl tracking-[0.2em] uppercase"
           >
             Portfolio
           </motion.h2>
@@ -93,7 +93,7 @@ export const PortfolioSection = () => {
                 alt={img.alt}
                 className="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-1000"
               />
-              <div className="absolute inset-0 bg-[#3D4F2F]/0 group-hover:bg-[#3D4F2F]/10 transition-all duration-700" />
+              <div className="absolute inset-0 bg-[#272b00]/0 group-hover:bg-[#272b00]/10 transition-all duration-700" />
             </motion.div>
           ))}
         </div>
@@ -112,7 +112,7 @@ export const PortfolioSection = () => {
             target="_blank"
             rel="noopener noreferrer"
             data-testid="portfolio-instagram-link"
-            className="inline-flex items-center gap-3 text-[#3D4F2F] hover:text-[#D4AF37] transition-colors duration-500 group"
+            className="inline-flex items-center gap-3 text-[#272b00] hover:text-[#D4AF37] transition-colors duration-500 group"
           >
             <span className="font-body text-xs tracking-[0.2em] uppercase">
               See more on Instagram

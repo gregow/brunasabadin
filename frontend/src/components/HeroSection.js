@@ -17,18 +17,18 @@ export const HeroSection = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.2 }}
-          className="font-subheading text-[#5B6B4F] text-base md:text-lg mb-6 tracking-wide"
+          className="font-subheading text-[#54582f] text-base md:text-lg mb-6 tracking-wide"
         >
-          Fineline &middot; Ornamental &middot; Azulejo Portugu&ecirc;s
+          Fineline &middot; Ornamental
         </motion.p>
 
         <motion.h1
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.5 }}
-          className="font-['Mulish'] font-extralight text-[#3D4F2F] text-4xl sm:text-5xl lg:text-6xl tracking-[0.25em] uppercase"
+          className="font-['Mulish'] font-extralight text-[#272b00] text-4xl sm:text-5xl lg:text-6xl tracking-[0.25em] uppercase"
         >
-          Bruna
+          Sabadinnk
         </motion.h1>
 
         <motion.div
@@ -42,16 +42,16 @@ export const HeroSection = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 1.1 }}
-          className="font-subheading text-[#5B6B4F] text-lg md:text-xl max-w-xl mx-auto leading-relaxed"
+          className="font-subheading text-[#54582f] text-lg md:text-xl max-w-xl mx-auto leading-relaxed"
         >
-          Art deeply inspired by nature, spirituality &amp; mysticism
+          Made with love, care and presence
         </motion.p>
 
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 1.4 }}
-          className="font-body text-[#5B6B4F]/70 text-sm mt-4 tracking-widest uppercase"
+          className="font-body text-[#86895d] text-sm mt-4 tracking-widest uppercase"
         >
           Porto, Portugal
         </motion.p>
@@ -62,7 +62,7 @@ export const HeroSection = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 1.7 }}
-          className="inline-block mt-12 bg-transparent border border-[#D4AF37] text-[#3D4F2F] hover:bg-[#D4AF37] hover:text-white transition-all duration-500 uppercase tracking-[0.25em] text-xs px-10 py-4"
+          className="inline-block mt-12 bg-transparent border border-[#D4AF37] text-[#272b00] hover:bg-[#D4AF37] hover:text-white transition-all duration-500 uppercase tracking-[0.25em] text-xs px-10 py-4"
         >
           Book a consultation
         </motion.a>
