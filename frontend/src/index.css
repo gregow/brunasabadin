@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Mulish:wght@200;300;400;500&display=swap');
 @import url('https://fonts.cdnfonts.com/css/newyork');
-@import url('https://fonts.cdnfonts.com/css/athena');
+@import url('https://fonts.cdnfonts.com/css/seasons');
 
 @tailwind base;
 @tailwind components;
@@ -38,7 +38,8 @@ h1, h2, h3 {
 }
 
 .font-subheading {
-  font-family: "Athena", sans-serif;
+  font-family: "the-seasons", sans-serif;
+  font-style: normal;
   font-weight: 300;
 }
 
