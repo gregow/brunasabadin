@@ -10,12 +10,17 @@
    - **Auth**: SSH key (recommended) or password
 3. Note your droplet's IP address
 
-## 2. Point Your Domain (optional but recommended)
+## 2. Point Your Domain
 
 In your domain registrar (e.g. Namecheap, Cloudflare), add:
 ```
-A Record → sabadinnk.com → YOUR_DROPLET_IP
-A Record → www.sabadinnk.com → YOUR_DROPLET_IP
+A Record → brunasabadin.com → YOUR_DROPLET_IP
+A Record → www.brunasabadin.com → YOUR_DROPLET_IP
+```
+
+Wait a few minutes for DNS propagation. Verify with:
+```bash
+ping brunasabadin.com
 ```
 
 ## 3. Initial Server Setup
@@ -25,7 +30,7 @@ SSH into your droplet:
 ssh root@YOUR_DROPLET_IP
 ```
 
-Run the setup script:
+Run these commands:
 ```bash
 # Update system
 apt update && apt upgrade -y
@@ -80,14 +85,26 @@ docker compose ps
 curl http://localhost:8001
 ```
 
-## 7. Configure Nginx (reverse proxy + SSL)
-
-Create the Nginx config:
+You should see HTML content (not an error). If not, check logs:
 ```bash
-cat > /etc/nginx/sites-available/sabadinnk << 'EOF'
+docker compose logs -f web
+```
+
+## 7. Configure Nginx
+
+**IMPORTANT: Follow these steps exactly.**
+
+First, remove the default Nginx site that shows "Welcome to nginx!":
+```bash
+rm -f /etc/nginx/sites-enabled/default
+```
+
+Create the site config:
+```bash
+cat > /etc/nginx/sites-available/brunasabadin << 'NGINX'
 server {
     listen 80;
-    server_name sabadinnk.com www.sabadinnk.com;
+    server_name brunasabadin.com www.brunasabadin.com;
 
     location / {
         proxy_pass http://127.0.0.1:8001;
@@ -95,14 +112,11 @@ server {
         proxy_set_header X-Real-IP $remote_addr;
         proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
         proxy_set_header X-Forwarded-Proto $scheme;
-
-        # WebSocket support (if needed)
         proxy_http_version 1.1;
         proxy_set_header Upgrade $http_upgrade;
         proxy_set_header Connection "upgrade";
     }
 
-    # Cache static assets
     location /static/ {
         proxy_pass http://127.0.0.1:8001/static/;
         expires 30d;
@@ -117,27 +131,75 @@ server {
 
     client_max_body_size 10M;
 }
-EOF
+NGINX
 ```
 
-Enable the site:
+Enable the site and restart Nginx:
 ```bash
-ln -sf /etc/nginx/sites-available/sabadinnk /etc/nginx/sites-enabled/
-rm -f /etc/nginx/sites-enabled/default
-nginx -t && systemctl restart nginx
+ln -sf /etc/nginx/sites-available/brunasabadin /etc/nginx/sites-enabled/brunasabadin
+nginx -t
+systemctl restart nginx
 ```
+
+Verify `nginx -t` says "syntax is ok" and "test is successful" before restarting.
+
+Now visit `http://brunasabadin.com` — you should see the landing page.
 
 ## 8. Enable SSL (HTTPS)
 
 ```bash
-certbot --nginx -d sabadinnk.com -d www.sabadinnk.com
+certbot --nginx -d brunasabadin.com -d www.brunasabadin.com
 ```
 
-Follow the prompts. Certbot auto-renews via a systemd timer.
+Follow the prompts (enter email, agree to terms, choose redirect HTTP→HTTPS).
+
+Certbot auto-renews via a systemd timer. Verify with:
+```bash
+certbot renew --dry-run
+```
 
 ## 9. Verify
 
-Visit `https://sabadinnk.com` — your site should be live.
+Visit `https://brunasabadin.com` — your site should be live with HTTPS.
+
+---
+
+## Troubleshooting
+
+### Still seeing "Welcome to nginx!"
+```bash
+# Make sure default is removed
+ls /etc/nginx/sites-enabled/
+# Should only show: brunasabadin
+
+# If default is still there:
+rm -f /etc/nginx/sites-enabled/default
+systemctl restart nginx
+```
+
+### Site returns 502 Bad Gateway
+The app container isn't running or isn't ready:
+```bash
+cd /opt/sabadinnk
+docker compose ps          # Check if containers are up
+docker compose logs web    # Check for errors
+docker compose up -d       # Restart if needed
+curl http://localhost:8001  # Test directly
+```
+
+### Docker containers won't start
+```bash
+cd /opt/sabadinnk
+docker compose down
+docker compose up -d --build   # Rebuild from scratch
+docker compose logs -f         # Watch logs
+```
+
+### DNS not resolving
+```bash
+dig brunasabadin.com          # Check if DNS points to your IP
+# If not, wait for propagation (up to 24h) or check registrar settings
+```
 
 ---
 
@@ -184,6 +246,6 @@ docker cp $(docker compose ps -q mongo):/data/backup ./backup
 | Service | Cost |
 |---------|------|
 | DigitalOcean Droplet (Basic) | $6/mo |
-| Domain (optional) | ~$10/year |
+| Domain | ~$10/year |
 | SSL (Let's Encrypt) | Free |
 | **Total** | **~$6/mo** |
