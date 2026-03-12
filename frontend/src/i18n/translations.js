@@ -93,9 +93,9 @@ export const translations = {
     hero_subtitle: "Fineline \u00b7 Ornamental",
     hero_name: "Sabadinnk",
     hero_tagline:
-      "Arte profundamente inspirada pela natureza, espiritualidade e misticismo",
+      "Arte inspirada pela natureza, espiritualidade e misticismo",
     hero_location: "Porto, Portugal",
-    hero_cta: "Marcar consulta",
+    hero_cta: "Solicitar Or\u00e7amento",
 
     // About
     about_label: "A Artista",
@@ -180,7 +180,7 @@ export const translations = {
     hero_subtitle: "Fineline \u00b7 Ornamental",
     hero_name: "Sabadinnk",
     hero_tagline:
-      "Art profond\u00e9ment inspir\u00e9 par la nature, la spiritualit\u00e9 et le mysticisme",
+      "Art inspir\u00e9 par la nature, la spiritualit\u00e9 et le mysticisme",
     hero_location: "Porto, Portugal",
     hero_cta: "R\u00e9server une consultation",
 
