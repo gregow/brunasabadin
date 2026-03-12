@@ -15,16 +15,16 @@ from datetime import datetime, timezone
 ROOT_DIR = Path(__file__).parent
 load_dotenv(ROOT_DIR / '.env')
 
-# MongoDB connection
-mongo_url = os.environ['MONGO_URL']
+# MongoDB — Railway uses MONGO_URL or MONGODB_URL
+mongo_url = os.environ.get('MONGO_URL') or os.environ.get('MONGODB_URL')
+db_name = os.environ.get('DB_NAME', 'sabadinnk')
 client = AsyncIOMotorClient(mongo_url)
-db = client[os.environ['DB_NAME']]
+db = client[db_name]
 
 app = FastAPI()
 api_router = APIRouter(prefix="/api")
 
 
-# Models
 class InquiryCreate(BaseModel):
     name: str
     email: EmailStr
@@ -47,7 +47,6 @@ class Inquiry(BaseModel):
     created_at: str = Field(default_factory=lambda: datetime.now(timezone.utc).isoformat())
 
 
-# API Routes
 @api_router.get("/")
 async def root():
     return {"message": "The Golden Panther API"}
@@ -85,7 +84,6 @@ if STATIC_DIR.exists():
 
     @app.get("/{full_path:path}")
     async def serve_spa(request: Request, full_path: str):
-        # Skip API routes
         if full_path.startswith("api"):
             return
         file_path = STATIC_DIR / full_path
