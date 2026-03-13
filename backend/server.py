@@ -1,29 +1,27 @@
-from fastapi import FastAPI, APIRouter
+from fastapi import FastAPI, APIRouter, Request
+from fastapi.staticfiles import StaticFiles
+from fastapi.responses import FileResponse
 from dotenv import load_dotenv
 from starlette.middleware.cors import CORSMiddleware
 from motor.motor_asyncio import AsyncIOMotorClient
 import os
 import logging
 from pathlib import Path
-from pydantic import BaseModel, Field, ConfigDict
+from pydantic import BaseModel, Field, ConfigDict, EmailStr
 from typing import List, Optional
-from pydantic import EmailStr
 import uuid
 from datetime import datetime, timezone
-
 
 ROOT_DIR = Path(__file__).parent
 load_dotenv(ROOT_DIR / '.env')
 
-# MongoDB connection
-mongo_url = os.environ['MONGO_URL']
+# MongoDB — accepts MONGO_URL or MONGODB_URL
+mongo_url = os.environ.get('MONGO_URL') or os.environ.get('MONGODB_URL')
+db_name = os.environ.get('DB_NAME', 'sabadinnk')
 client = AsyncIOMotorClient(mongo_url)
-db = client[os.environ['DB_NAME']]
+db = client[db_name]
 
-# Create the main app
 app = FastAPI()
-
-# Create a router with the /api prefix
 api_router = APIRouter(prefix="/api")
 
 
@@ -50,29 +48,24 @@ class Inquiry(BaseModel):
     created_at: str = Field(default_factory=lambda: datetime.now(timezone.utc).isoformat())
 
 
-# Routes
+# API Routes
 @api_router.get("/")
 async def root():
     return {"message": "The Golden Panther API"}
-
 
 @api_router.post("/inquiries", response_model=Inquiry)
 async def create_inquiry(input_data: InquiryCreate):
     inquiry = Inquiry(**input_data.model_dump())
     doc = inquiry.model_dump()
     await db.inquiries.insert_one(doc)
-    # Remove _id added by MongoDB
     doc.pop("_id", None)
     return inquiry
-
 
 @api_router.get("/inquiries", response_model=List[Inquiry])
 async def get_inquiries():
     inquiries = await db.inquiries.find({}, {"_id": 0}).to_list(1000)
     return inquiries
 
-
-# Include the router
 app.include_router(api_router)
 
 app.add_middleware(
@@ -83,13 +76,28 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# Logging
-logging.basicConfig(
-    level=logging.INFO,
-    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s'
-)
-logger = logging.getLogger(__name__)
+# Serve built React frontend (for production / Railway)
+BUILD_DIR = ROOT_DIR.parent / "frontend" / "build"
+if BUILD_DIR.exists():
+    app.mount("/static", StaticFiles(directory=str(BUILD_DIR / "static")), name="assets")
+    if (BUILD_DIR / "fonts").exists():
+        app.mount("/fonts", StaticFiles(directory=str(BUILD_DIR / "fonts")), name="fonts")
+    if (BUILD_DIR / "video").exists():
+        app.mount("/video", StaticFiles(directory=str(BUILD_DIR / "video")), name="video")
+    if (BUILD_DIR / "images").exists():
+        app.mount("/images", StaticFiles(directory=str(BUILD_DIR / "images")), name="images")
 
+    @app.get("/{full_path:path}")
+    async def serve_spa(request: Request, full_path: str):
+        if full_path.startswith("api"):
+            return
+        file_path = BUILD_DIR / full_path
+        if file_path.is_file():
+            return FileResponse(str(file_path))
+        return FileResponse(str(BUILD_DIR / "index.html"))
+
+logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+logger = logging.getLogger(__name__)
 
 @app.on_event("shutdown")
 async def shutdown_db_client():
