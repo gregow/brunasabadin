@@ -4,12 +4,12 @@ import { useLanguage } from "@/i18n/LanguageContext";
 
 // Easy to swap: replace URLs with your own portfolio images
 const PORTFOLIO_IMAGES = [
-  { src: "https://images.unsplash.com/photo-1704120103349-f9db80e2cd6e?crop=entropy&cs=srgb&fm=jpg&q=85&w=600", alt: "Ornamental floral design", span: "col-span-1 row-span-2" },
-  { src: "https://images.unsplash.com/photo-1729343881969-c576e2fb04b7?crop=entropy&cs=srgb&fm=jpg&q=85&w=600", alt: "Art nouveau botanical pattern", span: "col-span-1 row-span-1" },
-  { src: "https://images.unsplash.com/photo-1598934475004-4a2e8729e194?crop=entropy&cs=srgb&fm=jpg&q=85&w=600", alt: "Line drawing rose and hands", span: "col-span-1 row-span-1" },
-  { src: "https://images.unsplash.com/photo-1761249842337-a961c80d2919?crop=entropy&cs=srgb&fm=jpg&q=85&w=600", alt: "Botanical white rose illustration", span: "col-span-1 row-span-2" },
-  { src: "https://images.unsplash.com/photo-1749730796597-578c649f61e2?crop=entropy&cs=srgb&fm=jpg&q=85&w=600", alt: "Botanical plant illustration", span: "col-span-1 row-span-1" },
-  { src: "https://images.unsplash.com/photo-1768425228876-ddf37cfc7dbe?crop=entropy&cs=srgb&fm=jpg&q=85&w=600", alt: "Intricate venation pattern", span: "col-span-1 row-span-1" },
+  { src: "/images/portfolio_1.jpg", alt: "Ornamental floral design", span: "col-span-1 row-span-2" },
+  { src: "/images/portfolio_2.jpg", alt: "Art nouveau botanical pattern", span: "col-span-1 row-span-1" },
+  { src: "/images/portfolio_3.jpg", alt: "Line drawing rose and hands", span: "col-span-1 row-span-1" },
+  { src: "/images/portfolio_4.jpg", alt: "Botanical white rose illustration", span: "col-span-1 row-span-2" },
+  { src: "/images/portfolio_5.jpg", alt: "Botanical plant illustration", span: "col-span-1 row-span-1" },
+  { src: "/images/portfolio_6.jpg", alt: "Intricate venation pattern", span: "col-span-1 row-span-1" },
 ];
 
 const fadeIn = {
